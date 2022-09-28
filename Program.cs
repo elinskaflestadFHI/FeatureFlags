@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IFeatureFlagHandler, FhiFeatureFlagHandler>();
+builder.Services.AddScoped<IFeatureFlagHandler, LaunchDarklyFeatureFlagHandler>();
 
 var app = builder.Build();
 

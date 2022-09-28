@@ -1,4 +1,5 @@
-﻿using Fhi.Hu.FeatureFlags.Contracts.v1;
+﻿using FeatureFlags.Models;
+using Fhi.Hu.FeatureFlags.Contracts.v1;
 using Refit;
 
 namespace FeatureFlags.FeatureFlags
@@ -12,11 +13,11 @@ namespace FeatureFlags.FeatureFlags
             _featureFlagsClient = RestService.For<IFeatureFlags>("https://test-fhi-hu-featureflags-api.azurewebsites.net/");
         }
 
-        public bool IsEnabled(string featureFlagName, string userName, bool defaultValue)
+        public bool IsEnabled(string featureFlagName, User user, bool defaultValue)
         {
             try
             {
-                return _featureFlagsClient.IsFeatureFlagEnabled(featureFlagName, userName).Result;
+                return _featureFlagsClient.IsFeatureFlagEnabled(featureFlagName, user.UserName).Result;
             }
             catch (Exception)
             {

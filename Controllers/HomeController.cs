@@ -18,7 +18,9 @@ namespace FeatureFlags.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.ShowLogo = _featureFlagHandler.IsEnabled("ShowLogo", "gaute", false);
+            var user = new User("elin", "Elin Skaflestad");
+
+            ViewBag.ShowLogo = _featureFlagHandler.IsEnabled("ShowLogo", user, false);
 
             return View();
         }
