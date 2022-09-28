@@ -3,11 +3,11 @@ using LaunchDarkly.Sdk.Server;
 
 namespace FeatureFlags.FeatureFlags
 {
-    public class LaunchDarklyHandler : IFeatureFlagHandler
+    public class LaunchDarklyFeatureFlagHandler : IFeatureFlagHandler
     {
         private LdClient _launchDarklyClient;
 
-        public LaunchDarklyHandler()
+        public LaunchDarklyFeatureFlagHandler()
         {
             _launchDarklyClient = new LdClient("sdk-b06cfce9-8cc3-4a72-a9e9-b2799573ac40");
         }

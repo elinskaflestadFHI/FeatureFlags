@@ -3,11 +3,11 @@ using Refit;
 
 namespace FeatureFlags.FeatureFlags
 {
-    public class FeatureFlagHandler : IFeatureFlagHandler
+    public class FhiFeatureFlagHandler : IFeatureFlagHandler
     {
         private IFeatureFlags _featureFlagsClient;
 
-        public FeatureFlagHandler()
+        public FhiFeatureFlagHandler()
         {
             _featureFlagsClient = RestService.For<IFeatureFlags>("https://test-fhi-hu-featureflags-api.azurewebsites.net/");
         }
