@@ -20,7 +20,7 @@ namespace FeatureFlags.Controllers
         {
             var user = new User("elin", "Elin Skaflestad");
 
-            ViewBag.ShowLogo = _featureFlagHandler.IsEnabled("ShowLogo", user, false);
+            ViewBag.ShowLogo = _featureFlagHandler.IsEnabled(FeatureFlagName.ShowLogo, user, false);
 
             return View();
         }

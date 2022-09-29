@@ -12,11 +12,11 @@ namespace FeatureFlags.FeatureFlags
             _launchDarklyClient = new LdClient("sdk-b06cfce9-8cc3-4a72-a9e9-b2799573ac40");
         }
 
-        public bool IsEnabled(string featureFlagName, Models.User user, bool defaultValue)
+        public bool IsEnabled(FeatureFlagName name, Models.User user, bool defaultValue)
         {
             var ldUser = User.Builder(user.UserName).Name(user.DisplayName).Build();     
 
-            return _launchDarklyClient.BoolVariation(featureFlagName, ldUser, defaultValue);
+            return _launchDarklyClient.BoolVariation(name.ToString(), ldUser, defaultValue);
         }
     }
 }

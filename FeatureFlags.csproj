@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Fhi.Hu.Featureflags" Version="1.0.162" />
     <PackageReference Include="LaunchDarkly.ServerSdk" Version="7.0.0-alpha.1" />
+    <PackageReference Include="rox-server" Version="5.1.9" />
   </ItemGroup>
 
 </Project>

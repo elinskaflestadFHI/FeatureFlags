@@ -4,6 +4,6 @@ namespace FeatureFlags.FeatureFlags
 {
     public interface IFeatureFlagHandler
     {
-        bool IsEnabled(string featureFlagName, User user, bool defaultValue);
+        bool IsEnabled(FeatureFlagName name, User user, bool defaultValue);
     }
 }
